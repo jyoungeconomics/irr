@@ -4,12 +4,11 @@
 IRR <- function(outlay,pmt,scrap=NA,t,words=F){
   #compute discount factor for each time period
   d <- matrix(NA,nrow=t+1,ncol=1)
-  #begin initially by 10% increments of the discount rate from 0-100%
-  doofus <- matrix(NA,10,ncol=1)
   #to store initial 10% chunks' NPV
   dingus <- list()
   #to store the NPVs of the final discount rate increments (1/1000%)
   dong <- list()
+  #begin initially by 10% increments of the discount rate from 0-100%
   for (K in 1:101){
     #discount factors from year 0 (investment) to t (termination)
     for (i in 1:(t+1)){
